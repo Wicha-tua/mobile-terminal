@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css" id="css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			*{
+				touch-action: none;
+			}
+			body,html{
+				height:100%;
+				overflow: hidden;
+			}
+			#list{
+				position: absolute;
+				list-style: none;
+				overflow: hidden;
+			}
+			#list li{
+				float: left;
+			}
+			#list li img{
+				display: block;
+				width: 100%;
+			}
+			
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<ul id='list'>
+				<li><a href="#"><img src='../img/1.jpg' /></a></li>
+				<li><a href="#"><img src='../img/2.jpg' /></a></li>
+				<li><a href="#"><img src='../img/3.jpg' /></a></li>
+				<li><a href="#"><img src='../img/4.jpg' /></a></li>
+				<li><a href="#"><img src='../img/5.jpg' /></a></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+	
+		//取消默认行为
+		document.addEventListener('touchstart',function(ev){
+			ev.preventDefault();
+		});
+		
+		
+		window.onload=function(){
+				var wrapDom=document.getElementById('wrap');
+				var listDom=document.getElementById('list');
+				//布局样式
+				var listS=document.querySelectorAll('#list li');//获取li的个数
+				var cssDom=document.getElementById('css');
+				var cssText='#list{width:'+listS.length+'00%;}';//相当于#list{width: 500%;}
+				cssText +='#list li{width:'+(100/listS.length)+'%;}';//相当于#list li{width: 20%;}
+				cssText += '#wrap{height: '+ listS[0].offsetHeight +'px;}'
+				cssDom.innerHTML += cssText;
+				
+			//滑屏处理
+			var startX=0;
+			var elemX=0;
+			//给每一个图片定义一个下边
+			var IndexNow=0;
+			var disX=0;
+			wrapDom.addEventListener('touchstart',function(ev){
+				var touch=ev.changedTouches[0];
+				startX=touch.clientX;
+				elemX=listDom.offsetLeft;
+			});
+			
+			wrapDom.addEventListener('touchmove',function(ev){
+				var touch=ev.changedTouches[0];
+				var NowX=touch.clientX;
+				//手指位移的差值
+				var disX=NowX-startX;
+				listDom.style.left=elemX+disX+'px';
+				
+			});
+			
+			wrapDom.addEventListener('Touchend',function(ev){
+				var touch=ev.changedTouches[0];
+				var left=listDom.offsetLeft;
+				
+				var IndexNow=Math.round(-left/document.documentElement.clientWidth);
+				//ul的偏移量
+				 listDom.style.left=-IndexNow*document.documentElement.clientWidth + 'px';
+			});
+		}
+		
+	</script>
+</html>

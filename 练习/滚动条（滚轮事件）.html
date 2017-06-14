@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html,body{
+				height: 100%;
+				overflow: hidden;
+			}
+			
+			#wrap{
+				width: 20px;
+				height: 100%;
+				background: gray;
+				
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+			#inner{
+				width: 20px;
+				height: 40px;
+				background: #A52A2A;
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+			#content{
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			
+		</div>
+		<div id="wrap">
+			<div id="inner">
+				
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var wrap = document.getElementById('wrap');
+		var inner = document.getElementById('inner');
+		var content = document.getElementById('content');
+		
+		window.onresize = function(){
+			//滚动条的高度
+		var scale = document.documentElement.clientHeight/content.offsetHeight;
+		inner.style.height = scale * document.documentElement.clientHeight + 'px';
+		}
+		// 造文本
+		text = '';
+		for(var i = 0; i<900; i++){
+			text +=(i+1) +'<br>';
+		}
+		
+		content.innerHTML = text;
+		
+		//滚动条的高度
+		var scale = document.documentElement.clientHeight/content.offsetHeight;
+		inner.style.height = scale * document.documentElement.clientHeight + 'px';
+		// 滑轮的滑动事件
+		var startY = 0;
+		var elemY = 0;
+		inner.onmousedown = function(ev){
+			var ev = ev || window.event;
+			
+			startY = ev.clientY;
+			elemY = inner.offsetTop;
+			
+			inner.setCapture && inner.setCapture();
+			
+			document.onmousemove = function(ev){
+				var ev = ev || window.event;
+				
+				var nowY = ev.clientY;
+				var disY = nowY - startY;
+				var top = disY + elemY;
+				
+				if(top < 0){
+					top = 0;
+				}else if(top > document.documentElement.clientHeight - inner.offsetHeight){
+					top = document.documentElement.clientHeight - inner.offsetHeight;
+				}
+				
+				// 内容区
+				/*var scale = top / (document.documentElement.clientHeight - inner.offsetHeight);
+				content.style.top = -scale *(content.offsetHeight - document.documentElement.clientHeight) + 'px';
+				*/
+				content.style.top = -top/scale +'px';
+				inner.style.top = top + 'px';
+				
+			}
+			
+			document.onmouseup = function(){
+				document.onmousemove = document.onmouseup = null;
+				
+				document.releaseCapture && document.releaseCapture();
+			}
+			
+			return false;
+		}
+		
+		//滚轮事件
+		document.onmousewheel = fun;
+		if(document.addEventListener){
+			document.addEventListener('DOMMouseScroll', fun)
+		}
+		
+		function fun(ev){
+			var ev = ev || window.event;
+			
+			if(ev.wheelDelta){
+				// ie/chrome
+				//console.log(ev.wheelDelta);
+				var flag = 0;
+				var add = 0;
+				if(ev.wheelDelta > 0){
+				 // 向上滚动	
+				 flag = 'up';
+				 add = - 10;
+				 //inner.style.top = inner.offsetTop - 10 + 'px';
+				 //content.style.top = -inner.offsetTop/scale +'px';
+				}else{
+					//向下滚动
+					flag = 'down';
+					add = +10;
+					//inner.style.top = inner.offsetTop + 10 + 'px';
+					//content.style.top = -inner.offsetTop/scale +'px';
+				}
+			}else if(ev.detail){
+				//firefox
+				if(ev.detail > 0){
+					//向下滑动
+					flag = 'down';
+					add = + 10;
+					//inner.style.top = inner.offsetTop + 10 + 'px';
+					//content.style.top = -inner.offsetTop/scale +'px';
+				}else{
+					//向上滑动
+					flag = 'up';
+					add = -10;
+				 //inner.style.top = inner.offsetTop - 10 + 'px';
+				 //content.style.top = -inner.offsetTop/scale +'px';
+				}
+			}
+			var innerTop = inner.offsetTop +add;
+			    if(innerTop < 0 ){
+			    	innerTop = 0;
+			    }else if(innerTop > document.documentElement.clientHeight - inner.offsetHeight){
+			    	innerTop = document.documentElement.clientHeight - inner.offsetHeight;
+			    }
+			switch (flag){
+				case 'up':
+				 inner.style.top = innerTop + 'px';
+				 content.style.top = -innerTop/scale +'px';
+					break;
+				case 'down':
+				 inner.style.top = innerTop + add + 'px';
+				 content.style.top = -innerTop/scale +'px';
+					break;
+			}
+			if(ev.preventDefault){
+				ev.preventDefault();
+			}
+			return false;
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css" id="css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			
+			*{
+				touch-action: none;
+			}
+			html,body{
+				height: 100%;
+				oveflow: hidden;
+			}
+			#wrap{
+				position: relative;
+			}
+			ul{
+				list-style: none;
+				overflow: hidden;
+				position: absolute;
+			}
+			#list li img{
+				display: block;
+					width: 100%;
+			}
+
+			#list li{
+				float: left;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<ul id="list">
+				<li>
+					<a href="#">
+						<img src="img/1.jpg"/>
+					</a>
+				</li>
+				
+				<li>
+					<a href="#">
+						<img src="img/2.jpg"/>
+					</a>
+				</li>
+				
+				<li>
+					<a href="#">
+						<img src="img/3.jpg"/>
+					</a>
+				</li>
+				
+				<li>
+					<a href="#">
+						<img src="img/4.jpg"/>
+					</a>
+				</li>
+				
+				<li>
+					<a href="#">
+						<img src="img/5.jpg"/>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			document.addEventListener("touchstart",function (e){
+				e.preventDefault();
+			});
+
+			window.onload = function (){
+				var list = document.getElementById('list');
+				var wrap = document.getElementById('wrap');
+				var lis =  document.querySelectorAll('#list li');
+
+				var css = document.getElementById('css');
+
+				//js动态在CSS添加轮播图片宽度
+			var cssText = 'ul{width:'+lis.length+'00%;}'
+			cssText += '#list li{width: '+(100/lis.length)+'%;}'
+			
+			cssText +="#wrap{height: "+ lis[0].offsetHeight +"px;}"
+			css.innerHTML += cssText;
+			
+			
+			var startX = 0;
+			var elemX = 0;
+			
+			var now = 0;
+			var translateX = 0;
+			
+			wrap.addEventListener("touchstart",function(e){
+				var touch = e.changedTouches[0];
+				
+				startX = touch.clientX;
+				elemX = translateX;
+			})
+			
+			wrap.addEventListener("touchmove",function(e){
+				var touch = e.changedTouches[0];
+				
+				var nowX = touch.clientX;
+				var disX = nowX - startX;
+				translateX = disX + elemX
+				list.style.transform = 'translateX('+translateX+'px)'
+			});
+		
+		wrap.addEventListener('touchend',function(e){
+				var touch = e.changedTouches[0];
+				
+				var left = translateX;
+				//四舍五入处理 
+	now = Math.round(-left/document.documentElement.clientWidth);
+				
+				
+				//判断范围.不跳转到空白区域
+				if(now <0){
+					now = 0;
+				}else if(now>lis.length -1){
+					now = lis.length -1
+				}
+				
+				
+	//ul偏移量  滑动距离 = 每个图片下角标 * 屏幕的宽度(图片的宽度)	
+		translateX = -(now * document.documentElement.clientWidth)
+		list.style.transform ='translateX('+ translateX +'px)';
+			})
+		}
+		</script>
+	</body>
+</html>
