@@ -1,0 +1,118 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.form_logo{
+  margin-left: 160px;
+  margin-top: 60px;
+  display: flex;
+}
+.form_logo img{
+  width: 40%;
+}
+
+.form_logo span{
+  color: #999;
+  font-size: 26px;
+  margin-top: 35px;
+}
+/*---------  登录  注册  -----------------*/
+
+.mi-nav-tabs{
+  margin-top: 0px;
+  border-bottom: 1px solid transparent;
+  font-size: 28px;
+}
+
+.img-title{
+  text-align: center;
+  padding-top: 72px;
+}
+
+.mi-btn-default{
+  background-color: #cd0a0a;
+  border-bottom: 3px solid #A50000;
+}
+.mi-btn-default:hover{
+  background-color: #cd0a0a;
+  border-bottom: 3px solid #A50000;
+  color: #fff;
+}
+
+label{
+  color: #000;
+}
+
+
+.mi-nav-tabs a{
+  background-color: transparent;
+  position: relative;
+}
+
+.mi-nav-tabs a:hover{
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+}
+
+
+
+.mi-nav-tabs a:hover:after{
+  content: "";
+  display: inline-block;
+  height: 3px;
+  width: 20px;
+  background: #fff;
+
+  position: absolute;
+
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+}
+
+.btn-default {
+  font-size: 20px;
+}
+.mi-nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  color: #555;
+  cursor: default;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-bottom-color: transparent;
+}
+
+
+
+#form-login{
+  margin-top: 15px;
+}
+.code
+{
+  background-color: #f7f7f7;
+  font-family:Arial;
+  font-style:italic;
+  color:blue;
+  font-size:30px;
+  border:0;
+  padding:2px 3px;
+  letter-spacing:3px;
+  font-weight:bolder;
+  float:left;
+  cursor:pointer;
+  width:150px;
+  height:60px;
+  line-height:60px;
+  text-align:center;
+  vertical-align:middle;
+}
+a
+{
+  text-decoration:none;
+  font-size:12px;
+  color:#288bc4;
+}
+a:hover
+{
+  text-decoration:underline;
+}
+

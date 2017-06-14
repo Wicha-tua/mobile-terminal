@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>canvas</title>
+  <style type="text/css">
+    body{ background-color: #f9f9f9;  font-family: "微软雅黑";}
+
+    a{
+      display: block;
+      margin-top: 20px;
+      margin-left: 880px;
+      text-decoration: none;
+      padding: 20px;
+      font-size: 18px;
+      color: #080808;
+    }
+    a:after{
+      content: ">";
+    }
+    .title-txt{
+      vertical-align: middle;
+      color: #fff;
+      font-size: 24px;
+    }
+    img[src$='iconhome.png']{
+      width: 26px;
+      height: 26px;
+      vertical-align: middle;
+      margin: 5px 0 5px 8px;
+    }
+    /*img[src*='logo']{ margin: 8px; width: 42px;  height: 42px; vertical-align: middle}*/
+
+    .wrapper{ width: 640px; margin: 0 auto;
+      background-color: #fff;}
+
+    header{ background-color: #5bc0de; padding: 5px; }
+
+    footer{
+      text-align: right;
+      background-color: #f0f0f0;
+      padding: 5px 0;
+    }
+
+    #msg{
+      width: 366px;
+      height: 32px;
+      line-height: 32px;
+      vertical-align: middle;
+      transform: translateY(-2px);
+      text-indent: 1em;
+      font-size: 15px;
+      font-family: "微软雅黑";
+    }
+
+    button{
+      height: 42px;
+      line-height: 42px;
+      width: 120px;
+      border: none;
+      background-color: #5bc0de;
+      font-size: 15px;
+      color: #fff;
+      margin-left: 5px;
+      border-radius: 3px;
+      font-family: "微软雅黑";
+    }
+
+    #btncClose{
+      background-color: #999;
+    }
+
+    #chatLog{
+      height: 420px;
+      overflow-y: auto;
+    }
+
+    li{
+      padding: 5px;
+      /*border-bottom: 1px solid #f0f0f0;*/
+    }
+    .service, .custom{
+      font-size: 15px;
+      font-family: "微软雅黑";
+    }
+    .service:after{
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      margin: 3px;
+      width: 48px;
+      height: 48px;
+      background: url("./images/icon_service.png") no-repeat;
+    }
+    .custom{
+      text-align: right;
+    }
+    .custom:after{
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      margin: 3px;
+      width: 48px;
+      height: 48px;
+      background: url("./images/icon_custom.png") no-repeat;
+    }
+    .chat-txt{
+      display: inline-block;
+      vertical-align: middle;
+      height: 42px;
+      line-height: 42px;
+      border-radius: 3px;
+      margin-left: 8px;
+      background-color: #f0f0f0;
+      padding: 0 10px;
+
+    }
+  </style>
+
+</head>
+<body>
+<a href="index.html"><i>返回首页</i></a>
+<div class="wrapper">
+  <header>
+    <img src="./images/iconhome.png" alt="">
+    <span class="title-txt">柏氏客服</span>
+  </header>
+  <ul id="chatLog">
+  </ul>
+  <footer>
+    <input type="text" id="msg" placeholder="请输入信息...">
+    <button id="btnSend">发送</button><button id="btncClose">关闭</button>
+  </footer>
+</div>
+
+<script type="text/javascript">
+
+  var msgDOM = document.querySelector("#msg");
+  var btnSendDOM = document.querySelector("#btnSend");
+  var chatLogDOM = document.querySelector("#chatLog");
+
+  var btncCloseDom =  document.querySelector("#btncClose");
+
+
+
+  var wsURL = "ws://192.168.1.250:8080/html5/mywebsocket";
+  var ws = new WebSocket(wsURL);
+
+  ws.onopen = function () {
+    console.log("已连接。。。");
+    ws.send("open");
+  }
+
+  //    获取用户输入的信息，并发送
+  btnSendDOM.onclick = function () {
+
+    showChatMsg("custom", msgDOM.value);
+    ws.send(msgDOM.value);
+//        清空已发送的信息
+    msgDOM.value = null;
+  }
+
+  //    监听服务返回的信息
+  ws.onmessage = function (ev) {
+    showChatMsg("service", ev.data);
+//    让滚动条始终位于聊天记录的底部
+    chatLogDOM.scrollTop = chatLogDOM.scrollHeight;
+  }
+
+
+  //    按回车键自动发消息
+  window.onkeydown = function (ev) {
+    console.log(ev);
+
+    if(ev.keyCode == 13){
+
+      showChatMsg("custom", msgDOM.value);
+
+      ws.send(msgDOM.value);
+
+      //        清空已发送的信息
+      msgDOM.value = null;
+
+//    让滚动条始终位于聊天记录的底部
+      chatLogDOM.scrollTop = chatLogDOM.scrollHeight;
+
+    }
+  }
+
+
+  //    关闭ws
+
+  btncCloseDom.onclick = function () {
+    ws.close();
+    window.close();
+  }
+
+
+  /**
+   *  显示聊天记录
+   * @param className   custom or service
+   * @param chatMsg
+   */
+  function showChatMsg(className, chatMsg) {
+
+    var liDom = document.createElement("li");
+    liDom.classList.add(className);
+
+    var spanDom = document.createElement("span");
+    spanDom.classList.add("chat-txt");
+
+    spanDom.innerHTML = chatMsg;
+
+    liDom.appendChild(spanDom);
+
+    chatLogDOM.appendChild(liDom);
+  }
+
+
+
+</script>
+
+</body>
+</html>

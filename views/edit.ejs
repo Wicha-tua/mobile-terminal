@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class=""><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <title>首页</title>
+    <!-- Library - Bootstrap v3.3.5 -->
+    <link rel="stylesheet" type="text/css" href="libraries/lib.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <!-- Custom - Common CSS -->
+    <link rel="stylesheet" type="text/css" href="css/navigation-menu.css">
+    <link rel="stylesheet" type="text/css" href="css/shortcode.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--[if lt IE 9]>
+    <script src="js/html5/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div class="main-container">
+    <header class="header-section container-fluid no-padding">
+        <div class="container-fluid no-padding menu-block">
+            <div class="container">
+                <nav class="navbar navbar-default ow-navigation">
+                    <div class="navbar-header">
+                        <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="index.html" class="navbar-brand"><img style="width: 150px; height: 40px" src="./images/logo_user.png" alt=""></a>
+                    </div>
+                    <div class="menu-icon">
+                        <div class="search">
+                            <a href="#" id="search" title="Search"><i class="icon icon-Search"></i></a>
+                        </div>
+                        <ul class="cart">
+                            <li>
+                                <a title="Add To Cart" href="./cart.html"><i class="icon icon-ShoppingCart"></i></a>
+                            </li>
+                            <li><a href="#" title="Like"><i class="icon icon-Heart"></i></a></li>
+                            <li><a href="./login.html" title="User"><i class="icon icon-User"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="navbar-collapse collapse navbar-right" id="navbar">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="cart.html">购物车</a></li>
+                            <li><a href="checkout.html">订单查询</a></li>
+                            <li><a href="about.html">关于我们</a></li>
+                            <li><a href="contact-us.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="search-box">
+                    <span><i class="icon_close"></i></span>
+                    <form><input type="text" class="form-control" placeholder="请输入关键的字" /></form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!--轮播图-->
+        <div class="outer">
+            <ul>
+                <li><img src="./images/img1.jpg"/></li>
+                <li><img src="./images/img2.jpg" /></li>
+                <li><img src="./images/img3.jpg" /></li>
+                <li><img src="./images/img4.jpg" /></li>
+            </ul>
+            <p>
+                <span class="active"></span>
+                <span class=""></span>
+                <span class=""></span>
+                <span class=""></span>
+            </p>
+        </div>
+
+
+        <div class="services-section container-fluid">
+
+            <div class="container">
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div class="srv-box">
+                        <i class="icon icon-Goto"></i><h5>热卖产品</h5><i class="icon icon-Dollars"></i>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                </div>
+            </div>
+        </div>
+        <ul class="hot_goods">
+            <li>
+                <div class="goods_content">
+                    <a class="goods_img" href="./gouwuche.html">
+                        <img src="./images/goods1.jpg" alt="">
+                        <span>柏氏美之印护肤</span>
+                    </a>
+                    <span class="box">219</span>
+                </div>
+                <div style="display: block; position: relative; top: -150px; left: 90px">
+                    <button type="button" class="btn btn-default">查看详情</button>
+                    <button type="button" class="btn btn-info">加入购物车</button>
+                </div>
+            </li>
+            <li>
+                <div class="goods_content">
+                    <a class="goods_img" href="./gouwuche.html">
+                        <img src="./images/goods2.jpg" alt="">
+                        <span>柏氏飞翔护肤</span>
+                    </a>
+                    <span class="box">219</span>
+                </div>
+                <div style="display: block; position: relative; top: -150px; left: 90px">
+                    <button type="button" class="btn btn-default">查看详情</button>
+                    <button type="button" class="btn btn-info">加入购物车</button>
+                </div>
+            </li>
+            <li>
+                <div class="goods_content">
+                    <a class="goods_img" href="./gouwuche.html">
+                        <img src="./images/goods3.jpg" alt="">
+                        <span>柏氏焕颜护肤</span>
+                    </a>
+                    <span class="box">219</span>
+                </div>
+                <div style="display: block; position: relative; top: -150px; left: 90px">
+                    ]<button type="button" class="btn btn-default">查看详情</button>
+                    <button type="button" class="btn btn-info">加入购物车</button>
+                </div>
+            </li>
+        </ul>
+
+        <div id="product-section" class="product-section container-fluid no-padding">
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="section-header">
+                        <h3>我们的产品</h3>
+                        <img src="images/section-seprator.png" alt="section-seprator" />
+                    </div>
+                    <ul id="filters" class="products-categories no-left-padding">
+                        <li><a data-filter="*" class="active" href="#">所有产品</a></li>
+                        <li><a data-filter=".design" href="#">精品推荐</a></li>
+                        <li><a data-filter=".video" href="#">美白保湿</a></li>
+                        <li><a data-filter=".photography" href="#">眼霜</a></li>
+                        <li><a data-filter=".video" href="#">更多<i class="fa fa-angle-down"></i></a></li>
+                    </ul>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="搜你想要的" type="text">
+                        <span class="input-group-btn">
+								<button class="btn btn-search" title="Search" type="button"><i class="icon icon-Search"></i></button>
+							</span>
+                    </div>
+
+                    <ul class="products">
+
+                        <li class="product design">
+                            <a href="./gouwuche.html">
+                                <img src="./images/p1.jpg" alt="Product" />
+                                <h5>隔离BB霜组合</h5>
+                                <span class="price"><del>$428</del>$159</span>
+                            </a>
+                            <div class="wishlist-box">
+                                <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                                <a href="#"><i class="fa fa-heart-o"></i></a>
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </div>
+                            <a href="./cart.html" class="addto-cart" title="加入购物车">加入购物车</a>
+                        </li>
+                        <li class="product design">
+                            <a href="./gouwuche.html">
+                                <img src="./images/p2.jpg" alt="Product" />
+                                <h5>水感保湿三件套</h5>
+                                <span class="price"><del>$357</del>$232</span>
+                            </a>
+                            <div class="wishlist-box">
+                                <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                                <a href="#"><i class="fa fa-heart-o"></i></a>
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </div>
+                            <a href="#" class="addto-cart" title="加入购物车">加入购物车</a>
+                        </li>
+                        <li class="product design">
+                            <a href="./gouwuche.html">
+                                <img src="./images/p3.jpg" alt="Product" />
+                                <h5>保湿补水六件套</h5>
+                                <span class="price"><del>$516</del>$437</span>
+                            </a>
+                            <div class="wishlist-box">
+                                <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                                <a href="#"><i class="fa fa-heart-o"></i></a>
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </div>
+                            <a href="#" class="addto-cart" title="加入购物车">加入购物车</a>
+                        </li>
+                        <li class="product design">
+                            <a href="./gouwuche.html">
+                                <img src="./images/p4.jpg" alt="Product" />
+                                <h5>青春抗皱三件套</h5>
+                                <span class="price"><del>$417</del>$353</span>
+                            </a>
+                            <div class="wishlist-box">
+                                <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                                <a href="#"><i class="fa fa-heart-o"></i></a>
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </div>
+                            <a href="#" class="addto-cart" title="加入购物车">加入购物车</a>
+                        </li>
+                        <li class="product video">
+                            <a href="./gouwuche.html">
+                                <img src="./images/p5.jpg" alt="Product" />
+                                <h5>保湿补水六件套</h5>
+                                <span class="price"><del>$516</del>$437</span>
+                            </a>
+                            <div class="wishlist-box">
+                                <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                                <a href="#"><i class="fa fa-heart-o"></i></a>
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </div>
+                            <a href="#" class="addto-cart" title="加入购物车">加入购物车</a>
+                        </li>
+                        <li class="product video">
+                            <a href="./gouwuche.html">
+                                <img src="./images/p6.jpg" alt="Product" />
+                                <h5>保湿洁面乳</h5>
+                                <span class="price"><del>$59</del>$50</span>
+                            </a>
+                            <div class="wishlist-box">
+                                <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                                <a href="#"><i class="fa fa-heart-o"></i></a>
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </div>
+                            <a href="#" class="addto-cart" title="加入购物车">加入购物车</a>
+                        </li>
+                        <li class="product video">
+                            <a href="./gouwuche.html">
+                                <img src="./images/p7.jpg" alt="Product" />
+                                <h5>水柔保湿四件套</h5>
+                                <span class="price"><del>$328</del>$278</span>
+                            </a>
+                            <div class="wishlist-box">
+                                <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                                <a href="#"><i class="fa fa-heart-o"></i></a>
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </div>
+                            <a href="#" class="addto-cart" title="加入购物车">加入购物车</a>
+                        </li>
+                        <li class="product video">
+                            <a href="./gouwuche.html">
+                                <img src="./images/p8.jpg" alt="Product" />
+                                <h5>保湿礼装</h5>
+                                <span class="price"><del>$328</del>$219</span>
+                            </a>
+                            <div class="wishlist-box">
+                                <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                                <a href="#"><i class="fa fa-heart-o"></i></a>
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </div>
+                            <a href="#" class="addto-cart" title="加入购物车">加入购物车</a>
+                        </li>
+                        <li class="product photography">
+                            <a href="./gouwuche.html">
+                                <img src="./images/p9.jpg" alt="Product" />
+                                <h5>抗皱肌低液</h5>
+                                <span class="price"><del>$149</del>$126</span>
+                            </a>
+                            <div class="wishlist-box">
+                                <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                                <a href="#"><i class="fa fa-heart-o"></i></a>
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </div>
+                            <a href="#" class="addto-cart" title="加入购物车">加入购物车</a>
+                        </li>
+                        <li class="product photography">
+                            <a href="./gouwuche.html">
+                                <img src="./images/p10.jpg" alt="Product" />
+                                <h5>抗皱紧致精华</h5>
+                                <span class="price"><del>$179</del>$152</span>
+                            </a>
+                            <div class="wishlist-box">
+                                <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                                <a href="#"><i class="fa fa-heart-o"></i></a>
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </div>
+                            <a href="#" class="addto-cart" title="加入购物车">加入购物车</a>
+                        </li>
+                        <li class="product photography">
+                            <a href="./gouwuche.html">
+                                <img src="./images/p11.jpg" alt="Product" />
+                                <h5>青春密码抗皱霜</h5>
+                                <span class="price"><del>$169</del>$143</span>
+                            </a>
+                            <div class="wishlist-box">
+                                <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                                <a href="#"><i class="fa fa-heart-o"></i></a>
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </div>
+                            <a href="#" class="addto-cart" title="加入购物车">加入购物车</a>
+                        </li>
+                        <li class="product photography">
+                            <a href="./gouwuche.html">
+                                <img src="./images/p12.jpg" alt="Product" />
+                                <h5>青春密码抗皱眼霜</h5>
+                                <span class="price"><del>$179</del>$152</span>
+                            </a>
+                            <div class="wishlist-box">
+                                <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                                <a href="#"><i class="fa fa-heart-o"></i></a>
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </div>
+                            <a href="#" class="addto-cart" title="加入购物车">加入购物车</a>
+                        </li>
+                    </ul>
+                </div>
+                <nav class="ow-pagination">
+                    <ul class="pagination">
+                        <li><a href="#">&laquo;</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="selling" class="container-fluid no-left-padding no-right-padding woocommerce-selling">
+
+            <div class="container">
+
+                <div class="section-header">
+                    <h3>热门系列</h3>
+                    <img src="images/section-seprator.png" alt="section-seprator" />
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div  class="selling-box">
+                        <img src="./images/d1.jpg" alt="" />
+                        <div class="selling-content">
+                            <h6><a href="#">润色修颜</a></h6>
+                            <span class="price"> $49</span>
+                            <div class="star-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                        <div class="icon-list">
+                            <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                            <a href="#"><i class="fa fa-heart-o"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div  class="selling-box">
+                        <img src="./images/d2.jpg" alt="selling" />
+                        <div class="selling-content">
+                            <h6><a href="#">舒缓抗敏</a></h6>
+                            <span class="price"> $149</span>
+                            <div class="star-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                        <div class="icon-list">
+                            <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                            <a href="#"><i class="fa fa-heart-o"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div  class="selling-box">
+                        <img src="./images/d3.jpg" alt="selling" />
+                        <div class="selling-content">
+                            <h6><a href="#">祛痘</a></h6>
+                            <span class="price"> $249</span>
+                            <div class="star-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                        <div class="icon-list">
+                            <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                            <a href="#"><i class="fa fa-heart-o"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div  class="selling-box">
+                        <img src="./images/d4.jpg" alt="selling" />
+                        <div class="selling-content">
+                            <h6><a href="#">水库精粹</a></h6>
+                            <span class="price"> $179</span>
+                            <div class="star-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                        <div class="icon-list">
+                            <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                            <a href="#"><i class="fa fa-heart-o"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div  class="selling-box">
+                        <img src="./images/d5.jpg" alt="selling" />
+                        <div class="selling-content">
+                            <h6><a href="#">抗皱密码</a></h6>
+                            <span class="price"> $79</span>
+                            <div class="star-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                        <div class="icon-list">
+                            <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                            <a href="#"><i class="fa fa-heart-o"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div  class="selling-box">
+                        <img src="./images/d6.jpg" alt="selling" />
+                        <div class="selling-content">
+                            <h6><a href="#">水柔系列</a></h6>
+                            <span class="price"> $230</span>
+                            <div class="star-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                        <div class="icon-list">
+                            <a href="./gouwuche.html"><i class="fa fa-arrows-alt"></i></a>
+                            <a href="#"><i class="fa fa-heart-o"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right_hidden">
+            <a href="./chatting.html"><span id="online_chating">在<br>线<br>咨<br>询</span></a>
+        </div>
+    </main>
+    <!--底部-->
+    <footer>
+        <div id="foot">
+            <ul class="footer_list">
+                <li>
+                    <img src="./images/zhicon2.png" alt="" />
+                    <span>优惠保障</span>
+                </li>
+                <li>
+                    <img src="./images/zhicon3.png" alt="" />
+                    <span>全程监控</span>
+                </li>
+                <li>
+                    <img src="./images/zhicon4.png" alt="" />
+                    <span>柏氏特惠</span>
+                </li>
+                <li>
+                    <img src="./images/zhicon5.png" alt="" />
+                    <span>基地直供</span>
+                </li>
+                <li>
+                    <img src="./images/zhicon6.png" alt="" />
+                    <span>准时送达</span>
+                </li>
+            </ul>
+        </div>
+        <div id="bottom">
+            <ul class="footer_list2">
+                <li >
+                    <b >关于柏氏</b>
+                    <p>新用户注册</p>
+                    <p>在线下单</p>
+                    <p >支付方式</p>
+
+                </li>
+                <li >
+                    <b>配送说明</b>
+                    <p>运费说明</p>
+                    <p>配送方式</p>
+                    <p>发票说明</p>
+                </li>
+                <li >
+                    <b>售后服务</b>
+                    <p>退换货说明</p>
+                    <p>服务保障承诺</p>
+                    <p>验货与签收</p>
+                </li>
+                <li>
+                    <b>加盟柏氏</b>
+                    <p>加盟条款</p>
+                    <p>公司简介</p>
+                    <p>服务协议</p>
+                </li>
+            </ul>
+        </div>
+
+        <div id="bottom_line">
+            <div id="bottom_text">
+                <p >© 2005-2017 PAT'S柏氏旗舰店官方网站 版权所有，并保留所有权利。</p>
+                <p >柏氏&nbsp;&nbsp;纵享品质</p>
+            </div>
+        </div>
+
+    </footer>
+</div>
+
+
+<!-- JQuery v1.12.4 -->
+<script src="js/jquery.min.js"></script>
+<script src="./js/bootstrap.js"></script>
+<!-- Library - Js -->
+<script src="libraries/lib.js"></script>
+<script src="js/functions.js"></script>
+<!--轮播图-->
+<script src="./js/lunbotu.js"></script>
+
+</body>
+</html>
+

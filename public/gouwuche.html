@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>canvas</title>
+  <!-- Standard Favicon -->
+  <link rel="icon" type="image/x-icon" href="images//favicon.ico" />
+
+  <!-- For iPhone 4 Retina display: -->
+  <link rel="apple-touch-icon-precomposed" href="images//apple-touch-icon-114x114-precomposed.png">
+
+  <!-- For iPad: -->
+  <link rel="apple-touch-icon-precomposed" href="images//apple-touch-icon-72x72-precomposed.png">
+
+  <!-- For iPhone: -->
+  <link rel="apple-touch-icon-precomposed" href="images//apple-touch-icon-57x57-precomposed.png">
+
+  <!-- Library - Google Font Familys -->
+  <link href="https://fonts.googleapis.com/css?family=Arizonia|Crimson+Text:400,400i,600,600i,700,700i|Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="revolution/css/settings.css">
+
+  <!-- RS5.0 Layers and Navigation Styles -->
+  <link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
+  <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
+
+  <!-- Library - Bootstrap v3.3.5 -->
+  <link rel="stylesheet" type="text/css" href="libraries/lib.css">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <!-- Custom - Common CSS -->
+  <link rel="stylesheet" type="text/css" href="css/plugins.css">
+  <link rel="stylesheet" type="text/css" href="css/navigation-menu.css">
+  <link rel="stylesheet" type="text/css" href="css/shortcode.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+  <!--[if lt IE 9]>
+  <script src="js/html5/respond.min.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="./css/gouwuche.css">
+  <script src="./js/jquery-1.10.1.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/jd_tool.js"></script>
+  <script src="./js/jd.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<header class="header-section header-section-1 container-fluid no-padding">
+  <!-- Top Header -->
+  <!-- Top Header /- -->
+
+  <!-- Middel Header -->
+  <div class="middel-header">
+    <!-- Container -->
+    <div class="container">
+      <!-- Logo Block -->
+      <div class="col-md-4 col-sm-6 col-xs-12 logo-block">
+        <a href="index.html" class="navbar-brand"><img style="width: 150px; height: 40px" src="./images/logo_user.png" alt=""></a>
+      </div><!-- Logo Block /- -->
+      <!-- Search Block -->
+      <div class="col-md-5 col-sm-6 col-xs-6 search-block">
+        <div class="input-group">
+          <input class="form-control" type="text">
+          <span class="input-group-btn">
+								<button class="btn btn-default" type="button"><i class="icon icon-Search"></i></button>
+							</span>
+        </div>
+      </div><!-- Search Block /- -->
+      <!-- Menu Icon -->
+      <div class="col-md-3 col-sm-6 col-xs-6 menu-icon">
+        <ul class="cart">
+          <li>
+            <a title="Add To Cart" href="./cart.html"><i class="icon icon-ShoppingCart"></i></a>
+          </li>
+          <li><a href="#" title="Like"><i class="icon icon-Heart"></i></a></li>
+          <li><a href="./login.html" title="User"><i class="icon icon-User"></i></a></li>
+        </ul>
+      </div><!-- Menu Icon /- -->
+    </div><!-- Container /- -->
+  </div><!-- Middel Header /- -->
+
+  <!-- Menu Block -->
+  <div class="container-fluid no-padding menu-block">
+    <!-- Container -->
+    <div class="container">
+      <!-- nav -->
+      <nav class="navbar navbar-default ow-navigation">
+        <div class="navbar-header">
+          <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="index.html" class="navbar-brand"><img style="width: 170px; height: 40px" src="./images/logo.png" alt=""></a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="cart.html">购物车</a></li>
+            <li><a href="checkout.html">订单查询</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="contact-us.html">联系我们</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </nav><!-- nav /- -->
+    </div><!-- Container /- -->
+  </div><!-- Menu Block /- -->
+</header>
+<!--当前位置-->
+<div class="local">
+  <p>您当前的位置:</p>
+  <span><a href="./index.html">首页</a></span>
+  <span>></span>
+  <span>热卖商品</span>
+  <span>></span>
+  <span>柏氏护肤</span>
+</div>
+
+<!--单个信息-->
+<div class="wshangjia clearfix">
+
+  <div id="preview">
+    <p id="medimImgContainer">
+      <img id="mediumImg" src="images/products/g1-m.jpg" />
+      <span id="mask"></span><!--小黄块-->
+      <span id="maskTop"></span><!--悬于图片/mask上方的专用于接收鼠标移动事件的一个完全透明的层-->
+      <span id="largeImgContainer">
+							<img id="loading" src="./images/loading.gif"/>
+							<img id="largeImg"/>
+						</span>
+    </p>
+    <h1>
+      <a class="backward_disabled"></a>
+      <a class="forward_disabled"></a>
+      <div>
+        <ul id="icon_list">
+          <li><img src="images/products/g1.jpg" /></li>
+          <li><img src="images/products/g2.jpg" /></li>
+          <li><img src="images/products/g3.jpg" /></li>
+          <li><img src="images/products/g4.jpg" /></li>
+          <li><img src="images/products/g5.jpg" /></li>
+          <li><img src="images/products/g6.jpg" /></li>
+        </ul>
+      </div>
+    </h1>
+    <div id="short_share">
+      <a href="#" class="lf">查看大图</a>
+      <span class="lf"></span>
+    </div>
+  </div>
+
+  <div class="wsjaxinxi">
+    <h2>柏氏水库精粹洁面乳120ml编号：ECS000036</h2>
+    <div class="wsjadetail">
+      <span>补水保湿</span>
+      <span id="wspang">深层清洁</span>
+      <span>滋润</span>
+      <span>清洁毛孔</span>
+    </div>
+
+    <!--列表加入购物车-->
+    <div class="wlistgw">
+      <div class="wlistgwcenter">
+        <div class="wlistgwjg">
+          <p>网价:￥71.0</p>
+          <span><s>专柜价: ￥89.0</s></span>
+        </div>
+        <div class="wlistgwnum">
+          <p>数量:</p>
+          <div class="wsuanfaj">-</div>
+          <input type="text" value="1" />
+          <div class="wsuanfajia">+</div>
+          <p>&nbsp;&nbsp;件</p>
+          <img src="./images/gouwuche.png" class="gwc" style="display: none;position: absolute;"/>
+          <p class="ljdh"><a href="./cart.html">加入购物车</a></p>
+          <p><a href="购物车.html" style="color:#fff;">立即购买</a></p>
+        </div>
+      </div>
+      <div class="wshchbc">
+        <img src="./images/wsc.png" alt="" id="wscsptb"/>
+        收藏此商品
+        <span>分享到:</span>
+        <img src="./images/rxtx.png" alt="" />
+        <img src="./images/rxkj.png" alt="" />
+        <img src="./images/rxrr.png" alt="" />
+        <img src="./images/fxdb.png" alt="" />
+        <img src="./images/fxwb.png" alt="" />
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!--底部-->
+<footer>
+  <div id="foot">
+    <ul class="footer_list">
+      <li>
+        <img src="./images/zhicon2.png" alt="" />
+        <span>优惠保障</span>
+      </li>
+      <li>
+        <img src="./images/zhicon3.png" alt="" />
+        <span>全程监控</span>
+      </li>
+      <li>
+        <img src="./images/zhicon4.png" alt="" />
+        <span>柏氏特惠</span>
+      </li>
+      <li>
+        <img src="./images/zhicon5.png" alt="" />
+        <span>基地直供</span>
+      </li>
+      <li>
+        <img src="./images/zhicon6.png" alt="" />
+        <span>准时送达</span>
+      </li>
+    </ul>
+  </div>
+  <div id="bottom">
+    <ul class="footer_list2">
+      <li >
+        <b >关于柏氏</b>
+        <p>新用户注册</p>
+        <p>在线下单</p>
+        <p >支付方式</p>
+
+      </li>
+      <li >
+        <b>配送说明</b>
+        <p>运费说明</p>
+        <p>配送方式</p>
+        <p>发票说明</p>
+      </li>
+      <li >
+        <b>售后服务</b>
+        <p>退换货说明</p>
+        <p>服务保障承诺</p>
+        <p>验货与签收</p>
+      </li>
+      <li>
+        <b>加盟柏氏</b>
+        <p>加盟条款</p>
+        <p>公司简介</p>
+        <p>服务协议</p>
+      </li>
+    </ul>
+  </div>
+
+  <div id="bottom_line">
+    <div id="bottom_text">
+      <p >© 2005-2017 PAT'S柏氏旗舰店官方网站 版权所有，并保留所有权利。</p>
+      <p >柏氏&nbsp;&nbsp;纵享品质</p>
+    </div>
+  </div>
+</footer>
+</body>
+<!-- JQuery v1.12.4 -->
+<script src="js/jquery.min.js"></script>
+<script type='text/javascript' src='./js/angular-1.5.5/angular.js'></script>
+<script src="./js/cart.js"></script>
+<!-- Library - Js -->
+<script src="libraries/lib.js"></script>
+
+<script src="libraries/jquery.countdown.min.js"></script>
+
+<!-- RS5.0 Core JS Files -->
+<script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+<script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+<script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>
+<script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+
+<!-- Library - Google Map API -->
+<!---<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW40y4kdsjsz714OVTvrw7woVCpD8EbLE"></script>--->
+
+<!-- Library - Theme JS -->
+<script src="js/functions.js"></script>
+</html>
