@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 100px;
+				height: 100px;
+				background: deeppink;
+				/*transform: translateX(200px) scale(2);*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+	<!--
+		定义2d变换函数 css
+		
+		css(box, 'translateX', 2写00)
+		css(box, 'translateX')读
+	    
+	    rotate(360deg)
+	    skew(45deg)
+	    skewX(45deg)
+	    skewY(45deg)
+	    
+	    scale(2)
+	    scaleX(2)
+	    scaleY(2)
+	    
+	    translate(200px 200px)
+	    translateX(200px)
+	    translateY(200px)
+	-->
+	<script type="text/javascript" src="js/transform.js">
+		
+	</script>
+	<script type="text/javascript">
+		var box = document.getElementById('box');
+		transformCss(box,'translateX',200);
+		transformCss(box,'scaleX',0.5);
+		
+		console.log(transformCss(box,'translateX'));
+	
+	</script>
+</html>

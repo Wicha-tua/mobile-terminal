@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 100px;
+				height: 100px;
+				background: deeppink;
+				/*transform: translateX(200px) scale(2);*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+	<!--
+		定义2d变换函数 css
+		
+		css(box, 'translateX', 2写00)
+		css(box, 'translateX')读
+	    
+	    rotate(360deg)
+	    skew(45deg)
+	    skewX(45deg)
+	    skewY(45deg)
+	    
+	    scale(2)
+	    scaleX(2)
+	    scaleY(2)
+	    
+	    translate(200px 200px)
+	    translateX(200px)
+	    translateY(200px)
+	-->
+	<script type="text/javascript">
+		var box = document.getElementById('box');
+		css(box,'translateX',200);
+		css(box,'scaleX',0.5);
+		
+		console.log(css(box,'translateX'));
+		function css(node,name,value){
+			if(!node.transform){
+				node.transform = {};
+			};
+			
+			if(arguments.length > 2){
+				//写
+				
+				var result = '';
+				node.transform[name] = value;
+				for(var item in node.transform){
+					
+					switch (item){
+						case 'rotate':
+						case 'skew':
+						case 'skewX':
+						case 'skewY':
+						    result += item + '(' + node.transform[item] + 'deg) '
+							break;
+						case 'scale':
+						case 'scaleX':
+						case 'scaleY':
+						    result += item + '(' + node.transform[item] + ') '
+							break;	
+						case 'translate':
+						case 'translateX':
+						case 'translateY':
+						    result += item + '(' + node.transform[item] + 'px) '
+							break;	
+						
+					}
+				node.style.transform += result;
+				}
+		}else{
+			//读
+			if(typeof node.transform[name] =='undefined'){
+				if(name =='scale' || name == 'scaleX' || name == 'scaleY'){
+					value = 1;
+				}else{
+					value = 0;
+				}
+			}else{
+				value = node.transform[name];
+			}
+			return value;
+		}
+	}
+	</script>
+</html>
