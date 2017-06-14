@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="测试" />
+	</body>
+	<script type="text/javascript">
+		// DOM2 不会出现覆盖现象
+	var btnDom = document.querySelector('#btn');
+	btnDom.addEventListener('click', function(){
+		// this 指的是input
+		console.log(this);
+	})
+	
+	btnDom.addEventListener('click', function(){
+		console.log('dom2-2');
+	})
+	
+	btnDom.addEventListener('click', function(){
+		console.log('dom2-3');
+	})
+	
+	
+	</script>
+	
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="测试" />
+	</body>
+	<script type="text/javascript">
+		var btnDom = document.getElementById('btn');
+		bind(btnDom, 'click', fun);
+		
+		function fun(){
+			console.log(this);
+		}
+		function bind(obj, eventName, fn){
+			if(obj.addEventListener){
+				obj.addEventListener(eventName,fn);
+			}else{
+				obj.attachEvent('on' + eventName, function(){
+					fn.call(this);
+				})
+			}
+			
+		}
+	</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="测试" onclick="fun()"/>
+	</body>
+	<script type="text/javascript">
+		// DOM0 会出现覆盖现象
+		
+		function fun(){
+			// 如果把onclick写在input中 会出现html与js耦合
+			// this 指的是window 不是input
+			console.log(this);
+		}
+	/*var btnDom = document.querySelector('#btn');
+	btnDom.onclick = function(){
+		// this 指的是input
+		//console.log(this);
+		
+		console.log('dom01');
+	}
+	
+	btnDom.onclick = function(){
+		
+		
+		console.log('dom02');
+	}
+	
+	btnDom.onclick = function(){
+		
+		
+		console.log('dom03');
+	}*/
+	
+	
+	</script>
+	
+</html>

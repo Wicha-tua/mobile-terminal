@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width"/>
+		<title>ontouch</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				width: 200px;
+				height: 200px;
+				background-color: brown;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test"></div>
+	</body>
+	<script type="text/javascript">
+		var test = document.getElementById('test');
+		/*test.ontouchstart = function(){
+			alert('ontouchstart');
+		}
+		
+		test.ontouchmove = function(){
+			alert('ontouchmove');
+		}
+		
+		test.ontouchend = function(){
+			alert('ontouchend');
+		}*/
+		
+		test.addEventListener('touchstart' , function(){
+			console.log('ontouchstart');
+		})
+		
+		test.addEventListener('touchmove' , function(){
+			console.log('ontouchmove');
+		})
+		
+		test.addEventListener('touchend' , function(){
+			console.log('ontouchend');
+		})
+	</script>
+</html>
