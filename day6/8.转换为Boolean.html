@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+			 转换为boolean
+			 	- 使用Boolean()函数
+			 	- 转换的情况：
+			 		-对于数字
+			 		 除了0和NaN剩下的都是true
+			 		- 对于字符串
+			 		 除了空串剩下的都是true
+			 		- null和undefined都是false
+			 		- 对象默认都是true
+			 * */
+			
+		  // number
+		  var a = 3;
+		  a = 0;   // false
+		  a = NaN; // false
+		  a = Infinity; // true
+		  a = Boolean(a);
+		  console.log(a);
+		  
+		  //string
+		  var b = 'nihao';//true
+		  b = '';//false
+		  b = ' ';//true
+		  b = '很好';// true
+		  b = Boolean(b);
+		  console.log(b);
+		  
+		  //null 和 undefined
+		  var c = null;// false
+		  c = undefined; // false
+		  c = {};//true
+		  c = Boolean(c);
+		  console.log(c);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+		/*
+		 ! 逻辑非  
+		   - 非  可以对一个布尔值取反操作
+		   - true 变成false ,false变true
+		   - 如果为一个值取两次反和没取一样
+		   - 如果对一个非布尔值进行取反操作，它会将其转换为布尔值然后再运算
+		     - 利用这个特点，我们可以为任意的数据类型取两次反，来将其转换为布尔值
+		       原理和Boolean()函数一样
+		       
+		 * */
+		
+		var a = false;
+		//a = !a; // true
+		a = !!a;//false
+		
+		a =1 ;
+		a = 'nihao';
+		 //a = !a;
+		a = !a;
+		console.log(a);
+		console.log(typeof a);
+		
+		/*
+		 逻辑与  （&&） 逻辑或 （||）
+		  - 逻辑与
+		    - &&可以对符号两侧的值进行与运算
+		    - 只有两端都是true时，才会返回true,只要有一个false就会返回false
+		  - 逻辑或
+		    - || 可以对符号两侧的值进行或运算
+		    - 只要有一个true就会返回true， 如果两端都是false才会返回false
+		  
+		  JS中与运算是短路的与，如果第一个值是false,则不看第二个值
+		  JS中的或，是短路的或，如果第一个值为true，则不看第二个值
+		  
+		  对于非布尔值，做与  或运算时，它会先将其转换为布尔值，然后在运算，最终返回变量的原值！
+		  - 非布尔值的与运算
+		    如果第一个值为false, 则返回第一个，如果第一个值为true，则返回第二个
+		  - 非布尔值的或运算
+		  如果第一个值为true， 则返回第一个。如果第一个值为false，则返回第二个
+		 * */
+		//true && true
+		//如果两个值都为true,则返回后边的
+		var result = 2 && 10 ; //10
+		
+		//false && true
+		//如果两个值中有false,则返回靠前的false
+		result = 0 && 1; // 0
+		
+		//false && false
+		result = 0 && false; // 0
+		result = false && 0; // false
+		
+		//true && false
+		result = 1 && 0; // 0
+		console.log(result);
+		
+		//true || true
+		//两个值中有true,则返回靠前的true
+		var a = 'nihao' || 1; // 'nihao'
+		    a = 1 || 'nihao'; // 1
+		//true || false
+		//两个值中有第一个为true，则返回第一个值
+		//如果两个值中的第一个为false，则返回找第二个
+		// 如果第二个值为true，则返回第二个，如果第二个值为false，则返回第二个值
+		
+		    a = 1 || 0; //1
+		//false || true    
+		    a = 0 || 1; // 1
+		  
+		  a = 0 || NaN;// NaN
+		  a = NaN || 0 ;
+		console.log(a);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

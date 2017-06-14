@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+		/*
+		 JS中一共有5种基本数据类型
+		  	String
+			Number
+			Boolean
+			Null
+			Undefined
+			
+			- 所谓的类型转换就是将其他的数据类型转换为String Number 或 Boolean
+			- 强制类型转换
+			   - 转换为 String
+			   - 转换为 Number
+			   - 转换为 Boolean
+			   
+		 * */
+		
+		/*
+		 将其他的数据类型转换为 String
+		  - 方式一：
+		    - 调用被转换数据类型的toString()方法
+		    - toString()方法不会改变原变量的值，而是将值转换为字符串并返回
+		    - 由于null 和 undefined 中没有toString()方法
+		      所以不能调用toString()将他们转换为字符串
+		      
+		      对于数字来说，toString()方法，除了可以将一个数字转换为字符串以外
+			  它还可以将一个数字转换为指定进制的字符串
+			   在数值的toString()方法中，可以传递一个进制的整数作为参数
+			  这样数值将会被转换为指定进制的数字的字符串
+		      
+		   方式二:
+		   - 调用String()函数
+		   - 将被转换的数据作为参数传递给String()
+		   - 原理： 
+		     - 对于具有toString()方法的类型来说
+		       String()会调用它们的toString()方法来将其转换为字符串
+		     - 对于null和undefined来说
+		             会将null 直接转换为‘null’
+		             将undefined直接转换为‘undefined’
+		             
+		 * */
+		
+		var num = 12;
+		//console.log(num);
+		//console.log(typeof num);
+		// 将num的数值类型转换为字符串类型
+		//方式一
+		num = num.toString(8);
+		//num = String(num);
+		console.log(num);
+		console.log(typeof num);
+		
+		var bool = true;
+		bool = bool.toString();
+		console.log(bool);
+		console.log(typeof bool);
+		/*
+		 调用 XXX的YYY方法就是 XXX.YYY()
+		 document.write();
+		 console.log();
+		 
+		 调用XXX函数就是XXX()
+		 alert()
+		 
+		 由于Undefined和null中没有toString()方法，所以
+		 以下代码会报错
+		 * */
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

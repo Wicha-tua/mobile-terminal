@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table{
+				width: 500px;
+				margin: 0 auto;
+				border: 1px red solid;
+				
+				/*
+				 border-spacing: - 可以用来设置表格边框之间的距离
+				 border-collapse: - 可以用来设置表格的边框合并
+				 当设置border-collapse:以后border-spacing:自动失效
+				 * */
+				border-spacing: 100px;
+				border-collapse: collapse;
+			}
+			
+			td{
+				border: 1px red solid;
+			}
+			
+			table tr{
+				background-color: yellowgreen;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<!--
+			在日常生活中经常使用表格来表示一些格式化的数据：
+			  比如：课程表、账单、人名单
+			  
+			  同样在网页中也可以来创建表格，来表示格式化的数据
+			  
+			  我们使用table标签来创建表格
+		-->
+		<!-- table 是一个块元素-->
+		<table>
+			<!-- 在table中使用tr来代表表格中烦人一行，
+				有几行就有几个tr
+				
+				在我们的HTML中还为我们提供了thead  tbody  tfoot
+				 来将表格分成三个部分
+				 thead 表示表格的头部，可以将头部的tr放到thead中
+				 thead中的内容，永远会显示在表格的头部
+				 
+				 tfoot 表示表格的底部，可以将底部的tr放到tfoot中
+				 tfoot中的内容，永远会显示在表格的底部
+				 
+				 tbody 表示表格的主体，可以将主体内容的tr放到tbody中
+			-->
+			<tr>
+				<!--在tr中使用td代表一行中的一个单元格，有几个单元格就有几个td
+					
+				-->
+				<td>a</td>
+				<td rowspan="2">b</td>
+			</tr>
+			<tr>
+				<!--
+					rowspan 表示纵向合并单元格
+				-->
+				<td>A</td>
+				<!--<td rowspan="2">B</td>-->
+				<td>C</td>
+			</tr>
+			<tr>
+				<!--<td >1</td>-->
+				<td colspan="2">2</td>
+				<!--
+					colspan 表示横向的合并单元格
+				-->
+				<td>3</td>
+				<td>4</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+			 赋值运算符（=）可以将一个值赋值给一个变量
+			   - = 可以将符合右侧的值赋值给符号左侧的变量
+			   - += a+=x 等价于 a = a+x
+			   - -= a-=x 等价于 a = a-x
+			   - *= a*=x 等价于 a = a*x
+			   - /= a/=x 等价于 a = a/x
+			   - %= a%=x 等价于 a = a%x
+			   
+			相等运算符（==）
+			 - 它可以用来判断两个值是否相等，如果相等，则返回true，否则返回false
+			 - 如果对两个类型不同的变量进行相等比较，会先将其转换为相同的类型，然后再比较
+			    （至于具体转换成什么类型，不定，但是大部分情况是转换Number）
+			
+			全等运算符（===）
+			 - 可以判断两个值是否全等，如果全等则返回true， 否则返回false
+			 - 全等和相等的区别就是相等会做自动的类型转换，而全等不会
+			 -  使用全等时，如果两个值的类型不同，直接返回false
+			
+			不等运算符（!=）
+			 - 和相等相反，如果两个值不等则返回true，否则返回false
+			 - 不等会对值进行自动的类型转换，如果转换后相等，它也会人为相等
+			
+			
+			不全等运算符（!==）
+			 - 检查两个值是否不全等，如果成立则返回true，否则返回false
+			 - 不全等不会做自动的类型转换，如果两个值类型不同，直接返回true
+			   
+			 * */
+			
+			console.log(1==1); // true
+			
+			console.log('1' == 1); // true
+			console.log(1 == 2); // false
+			
+			//字符串和布尔值做相等比较时，都会转换为number然后再比
+			console.log('2' == true); // false
+			console.log(true == 1); // true
+			
+			//由于undefined 衍生自null，所以这两个类型的值做相等比较时会返回true
+			console.log(null == 0) // false
+			console.log(null == undefined); // true
+			// NaN不和任何值相等，包括他它自己
+			console.log(NaN == NaN); // false
+			
+			var a = NaN;
+			console.log(a == NaN); // false
+			
+			/*
+			 在js中为我们提供了一个isNaN()函数
+			  这个函数专门可以判断一个值是否是NaN,如果是则返回true,否则返回false
+			  
+			 * */
+			console.log(isNaN(a)); // true
+			
+			console.log(1 === '1');  // false
+			console.log(true === '1');  // false
+			
+			//null 和undefined相等，但是不全等
+			console.log(null === undefined); // false
+			
+			console.log(1 != 2); //true
+			console.log(1 != 1); //false
+			console.log(1 != '1'); // false
+			console.log(1 !== '1'); // true
+			
+			/*
+			 关系运算符
+			  - 可以比较两个值之间的大小关系
+			  - > 大于号比较符号左侧的值是否大于右侧的值
+			    - 如果关系成立，则返回true， 否则返回false
+			  - >= 大于等于比较左侧的值是否大于或等于右侧的值
+			    - 如果关系成立，则返回true, 否则返回false
+			  - < 小于号
+			  - <= 小于等于
+			  
+			  如果对非数值类型进行关系运算，则会将他们转换为Number，然后在比较
+			 * */
+			console.log(5 > 5); // false
+			console.log(5 >= 5); //true
+			console.log(6 >= 5); // true
+			
+			console.log(5 < 4) ; // false
+			
+			// 1<0
+			console.log(true < false) ;//false
+			
+			// 1<2
+			console.log(true < '2') ; // true
+			// null小于任何数值(除了NaN)都是true,大于任何数值都是false
+			// 与字符串（除了数值型的字符串）都是false,
+			// 与布尔值相比较，小于(除了布尔值是false)的都是true,大于布尔值的都是false
+			
+			console.log(null < 5) ; // true
+			console.log(null > 5) ; // false
+			console.log(null >= 5); //false
+			console.log(null <= 5); //true
+			console.log(null < 'nihao'); // false
+			console.log(null < '2'); // true
+			console.log(null > false); // true
+			console.log(null > NaN); // false
+			//NaN < 5 NaN 和任何值比较都是false
+			// undefined 和任何数据类型相比较都是false 
+			 console.log(undefined < 5) ; // false
+			 console.log(undefined > 5) ; // false
+			 console.log(undefined >= 5) ; // false
+			console.log(5 < '4') ;  // false
+			console.log(undefined > 'nihao'); // false
+			console.log(undefined < '2'); // false
+			console.log(undefined < true); // false
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--可以将JS代码编写到script标签中
+		还可以将JS代码编写到外部的JS文件中，
+		然后通过script标签来引入外部
+		的文件，
+			-将JS代码编写到外部文件中，可以在不同的页面中引入相同的JS代码
+			 方便后期的维护，并且写在外部文件中
+			 可以使用浏览器的缓存，加快访问速度，提高用户的体验
+			 
+			 如果使用script来引入外部文件，则它就不能编写任何的JS
+			 代码了，如果还需要编写则需要创建一个新的script标签
+		-->
+		
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">
+			alert('我是内部的JS代码');
+		</script>
+	</head>
+	<body>
+		<!--
+			将JS代码编写到标签的属性中，属于结构与行为耦合，不方便后期的维护
+			不推荐使用
+		-->
+		<!--
+			可以将JS代码编写到标签的指定属性中
+		-->
+		<button onclick="alert('你点我干嘛')">点我一下</button>
+		<!--
+			可以将JS代码编写到超链接的href中
+		-->
+		<a href="javascript:alert('在a链接中')">点击</a>
+		<a href="javascript:;">点击了</a>
+	</body>
+	<!--
+		也可以把JS代码编写在body的下面，或者指定元素要加JS的下面
+	-->
+	<script type="text/javascript">
+		document.write('很好');
+	</script>
+</html>

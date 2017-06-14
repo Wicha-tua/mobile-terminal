@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+			 自增：
+			  - 所谓的自增就是指在变量原值的基础上增加一个1
+			  - 我们使用++来进行自增运算
+			  - ++可以写在变量前或者变量后，我们称为前++和后++
+			  - 无论是a++ 还是 ++a 都会立即使原变量自增1， 调用几次就自增几次
+			  不同的是a++和++a的值不同
+			  a++的值是变量自增前的值（变量原值）
+			  ++a的值是变量自增后的值（变量新值）
+			  
+			自减：
+			 - 自减指在原值的基础上 —1 
+			 - 使用 --进行自减运算
+			 - --分为前--和 后--
+			  - 无论是--a 还是 a--都会使原变量立即自减1
+			  不同的是a--的值变量自减前的值（变量的原值）
+			  而 --a 的值是变量自减后的值（变量的新值）
+			 * */
+			
+			var a = 10;
+			//a++;
+			//console.log('a=' + a);// 11
+			//console.log('a++ = ' + a++);//11
+			
+			//++a;
+			//console.log('a=' +a); // 11
+			//console.log('++a = ' + ++a);// 12
+			//      10    12    12
+			
+			/*
+			 a++ a++ = 10  a=11
+			 ++a ++a = 12  a =12
+			 * */
+			/*console.log('a++ =' + a++); //10
+			console.log('++a ='+ ++a);  //12
+			console.log('a=' + a);*/  //12
+			var c = a++ + ++a + a;
+			console.log('c=' +c); // 34
+			
+			var n = 5;
+			console.log('n--=' + n--);//5
+			console.log('--n=' + --n);//3
+			console.log('n=' +n);//3
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+			 Number
+			   - 在js中所有的数字都是Number类型
+			   - 包括基数和浮点数
+			 * */
+			var num = 1 ;
+			var num2 = 10.5;
+			var str = '123';
+			
+			/*
+			 typeof
+			   - 通过typeof可以来检查一个变量的类型
+			   - 语法：typeof 变量
+			   - 它会将检查的结果返回
+			   - 使用typeof检查一个字符串时，会返回string
+			   - 使用typeof 检查一个数值时，会返回number
+			   
+			 * */
+			console.log(num);
+			console.log(num2);
+			console.log(str);
+			console.log(typeof num);
+			console.log(typeof str);
+			
+			/*
+			 JS中可以表示的最大的数字 
+			   Number.MAX_VALUE来获取最大值
+			    1.7976931348623157e+308
+			   Number.MIN_VALUE来获取最小值（0以上的最小值）
+			    5e-324
+			    
+			   如果我们使用的数字超过了最大值，则会返回 Infinity
+			   表示无穷
+			    正负无穷 Infinity，它的类型也是Number
+			   
+			  特殊的数字
+			   NaN (Not A Number)
+			    - 用来表示一个非法的数字
+			    - 使用typeof 检查一个NaN时，也会返回number
+			    
+			 * */
+			console.log(Number.MAX_VALUE);
+			console.log(Number.MIN_VALUE);
+			
+			var max = Number.MAX_VALUE;
+			var a = 10;
+			a = 10 * 'hello'; /* NaN*/
+			console.log(typeof a);
+			console.log(max);
+			
+			/*
+			 需要表示一些其他进制的数字
+			  - 十六进制数字： 0x数字
+			  - 八进制数字 ：    0数字
+			  - 二进制的数字     0b数字  IE不支持  ， Hbuilder不支持
+			 * */
+			var b = 0x10;
+			b = 070;
+			//b = 0b10;
+			console.log('b=:'+b);
+			
+			/*
+			在JS中大部分的整数的运算都可以确保结果正确
+			但是如果对浮点数进行运算时，可能出现不可预期的结果
+			所以在JS中尽量不要做对精度要求高的运算，比如，钱相关的
+			 * */
+			
+			var c = 100 + 100;
+			c = 0.01 + 0.05;
+			console.log(c);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

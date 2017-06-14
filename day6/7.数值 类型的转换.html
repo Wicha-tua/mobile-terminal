@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+			转换为Number
+			 - 方式一：
+			   - 使用Number()函数
+			   - 转换的情况：
+			     1.对于字符串来说
+			       - 如果字符串是一个合法的数字，则将其转换为对应的数字
+			       - 如果字符串不是一个合法的数字，则转换为NaN
+			       - 如果字符串是一个空串或纯空格的字符串，则转换为0
+			     2.对于布尔值来说
+			       - true 转换为1
+			       - false 转换为0
+			     3.对于Null
+			       - null转换为0 
+			     4. 对于Undefined
+			       - undefined 转换为NaN
+			       
+			 * */
+			
+			//字符串转换为数值
+			
+			var str = '123';
+			var str1 = NaN;
+			var str2 = '';
+			var str3 = ' ';
+			str1 = Number(str1);
+			//console.log(str1); // str1 - NaN 非数字（包括NaN）
+							  // str  - 123 数字
+							  // str2  - 0 空串
+							  // str3  - 0 空格
+			//console.log(typeof str1);
+			
+			// 布尔值转换为数值
+			var bool = true;
+			var bool1 = false;
+			bool1 = Number(bool1);
+			//console.log(bool1);
+			//console.log(typeof bool1);
+			
+			// null 转换为数值
+			var a = null;
+			a = Number(a);
+			//console.log(a); // 0
+			//console.log(typeof a);
+			
+			// undefined转换为数值
+			var b = undefined;
+			b = Number(b);
+			console.log(b); // NaN
+			console.log(typeof b);
+			
+			/*
+			 除了使用Number()函数，JS中还为我们提供了两个函数
+			  专门用来将一个字符串转换为数字的
+			  parseInt()
+			    - 将一个字符串转换为整数
+			    - 使用该函数解析字符串时，它会从字符串的左侧开始解析
+			        直到解析到最后一个有效的整数位
+			  parseFloat()
+			    - 将一个字符串转换为小数
+			    - parseFloat()和parseInt()类似
+			       不同的是它可以解析到有效的小数位
+			       
+			 * */
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
