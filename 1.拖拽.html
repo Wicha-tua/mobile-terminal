@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box{
+				width: 100px;
+				height: 100px;
+				background: brown;
+				position: absolute;
+				
+			}
+			
+			#box2{
+				width: 200px;
+				height: 200px;
+				background: darkgoldenrod;
+				position: absolute;
+				top: 300px;
+				left: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		
+		<div id="box2">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		//拖拽
+		var box = document.getElementById('box');
+		var box2 = document.getElementById('box2');
+		// 鼠标初始位置
+		var start = {left : 0, top : 0};
+		// 元素的初始位置
+		var elem = {left : 0, top : 0};
+		box.onmousedown = function(ev){
+			var ev = ev || window.event;
+			// 获取鼠标位置
+			start.left = ev.clientX;
+			start.top = ev.clientY;
+			// 获取元素位置
+			elem.left = box.offsetLeft;
+			elem.top = box.offsetTop;
+			
+			// 兼容IE8 全局捕获
+			if(box.setCapture){
+				box.setCapture();
+			}
+			document.onmousemove = function(ev){
+			var ev = ev || window.event;	
+			//鼠标现在的位置	
+			var end = {};
+			end.left = ev.clientX;
+			end.top = ev.clientY;
+			// 鼠标的距离差
+			var disX = 0;
+			var disY = 0;
+			disX = end.left - start.left;
+			disY = end.top - start.top;
+			
+			// 限定范围并吸附
+			var left = elem.left + disX;
+			var top = elem.top + disY;
+			
+			if(left < 0){
+				left = 0;
+			}else if(left > document.documentElement.clientWidth - box.offsetWidth){
+				left = document.documentElement.clientWidth - box.offsetWidth;
+			}
+			
+			if(top < 0){
+				top = 0;
+			}else if(top > document.documentElement.clientHeight - box.offsetHeight){
+				top = document.documentElement.clientHeight - box.offsetHeight;
+			}
+			
+			box.style.left = left + 'px';
+			box.style.top = top + 'px';
+			
+			
+			// 九宫格碰撞
+			
+			//box
+			var L1 = box.getBoundingClientRect().left;
+			var T1 = box.getBoundingClientRect().top;
+			var R1 = box.getBoundingClientRect().right;
+			var B1 = box.getBoundingClientRect().bottom;
+			//box2
+			var L2 = box2.getBoundingClientRect().left;
+			var T2 = box2.getBoundingClientRect().top;
+			var R2 = box2.getBoundingClientRect().right;
+			var B2 = box2.getBoundingClientRect().bottom;
+			// L1>R2  T1>B2 R1<L2 B1<T2
+			if(L1>R2 || T1>B2 || R1<L2 || B1<T2){
+				box2.style.background = 'darkgoldenrod';
+			}else{
+				box2.style.background = 'gold';
+			}
+			
+			
+		};
+		
+			document.onmouseup = function(){
+				document.onmousemove = document.onmouseup = null;
+				if(document.releaseCapture){
+				document.releaseCapture();
+			}
+			};
+		
+		// 取消系统默认行为 ,这是dom0的方式
+			return false;
+		};
+		
+		
+	</script>
+</html>

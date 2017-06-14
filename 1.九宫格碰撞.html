@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box{
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background: brown;
+			}
+			#box2{
+				position: absolute;
+				left: 500px;
+				top: 300px;
+				width: 200px;
+				height: 200px;
+				background: red;
+				text-align: center;
+				line-height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<div id="box2">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		//获取元素
+		var box = document.getElementById('box');
+		var box2 = document.getElementById('box2');
+		//鼠标开始的位置
+		var startP = {left:0, top:0};
+		//元素的起始位置
+		var elemP = {left:0, top:0};
+		
+		box.onmousedown = function(ev){
+			
+			//兼容性
+			var ev = ev || window.event;
+			//console.log(ev);
+			
+			//获取鼠标开始的位置
+			startP.left = ev.clientX;
+			startP.top = ev.clientY;
+			//获取元素开始的位置
+			elemP.left = box.offsetLeft;
+			elemP.top = box.offsetTop;
+			//全局捕获
+			/*if(box.setCapture){
+				box.setCapture();
+			}*/
+			
+			box.setCapture && box.setCapture();
+			document.onmousemove = function(ev){
+				//兼容
+				var ev = ev || window.event;
+				
+				//鼠标移动结束的位置
+				var endP = {};
+				endP.left = ev.clientX;
+				endP.top = ev.clientY;
+				
+				//鼠标的距离差
+				var nowX = 0;
+				var nowY = 0;
+				nowX = endP.left - startP.left;
+				nowY = endP.top - startP.top;
+				
+				//范围的限定
+				
+				var left = nowX + elemP.left;
+				var top = nowY + elemP.top;
+				if(left < 50){
+					left = 0;
+				}else if(left > document.documentElement.clientWidth - box.offsetWidth - 50){
+					left = document.documentElement.clientWidth - box.offsetWidth;
+				}
+				
+				if(top < 50){
+					top = 0;
+				}else if(top > document.documentElement.clientHeight-box.offsetHeight - 50){
+					top = document.documentElement.clientHeight-box.offsetHeight;
+				}
+				//元素结束的位置
+				box.style.left = left +'px';
+				box.style.top = top + 'px';
+				
+				//九宫格碰撞
+				
+				//box
+				var L1 = box.getBoundingClientRect().left;
+				var T1 = box.getBoundingClientRect().top;
+				var R1 = box.getBoundingClientRect().right;
+				var B1 = box.getBoundingClientRect().bottom;
+				
+				//box2
+				var L2 = box2.getBoundingClientRect().left;
+				var T2 = box2.getBoundingClientRect().top;
+				var R2 = box2.getBoundingClientRect().right;
+				var B2 = box2.getBoundingClientRect().bottom;
+				
+				// R1<L2  L1>R2  T1>B2  B1<T2
+				
+				if(R1<L2 || L1>R2 || T1>B2 || B1<T2){
+					box2.style.background = 'skyblue';
+					box2.innerHTML = '李芳芳';
+				}else{
+					box2.style.background = 'pink';
+					box2.innerHTML = '王明';
+				}
+			}
+			
+			document.onmouseup = function(){
+				document.onmousemove = document.onmouseup = null;
+				//解除全局捕获
+				/*if(box.releaseCapture){
+				box.releaseCapture();
+			}*/
+				box.releaseCapture && box.releaseCapture();
+			}
+			//取消系统的默认行为
+			return false;
+		}
+	</script>
+</html>

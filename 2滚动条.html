@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,body{
+				height: 100%;
+				overflow: hidden;
+			}
+			#wrap{
+				width: 20px;
+				height: 100%;
+				background: #999;
+				position: absolute;
+				right: 0;
+				top : 0;
+			}
+			#inner{
+				width : 20px;
+				height : 40px;
+				background: red;
+				position : absolute;
+				top : 0;
+				right : 0;
+			}
+			
+			#content{
+				position: absolute;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		
+		<div id="content">
+			
+		</div>
+		<div id="wrap">
+			
+			<div id="inner">
+				
+			</div>
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var wrap = document.getElementById('wrap');
+		var inner = document.getElementById('inner');
+		var content = document.getElementById('content');
+		
+		window.onresize = function(){
+			var scale = document.documentElement.clientHeight /content.offsetHeight;
+			inner.style.height = document.documentElement.clientHeight * scale + 'px';
+			
+		}
+		 var text = '';
+		 for(var i = 0; i < 900; i++){
+		 	text += (i+1) + '<br>';
+		 }
+		 content.innerHTML = text;
+		 var scale = document.documentElement.clientHeight /content.offsetHeight;
+		 inner.style.height = document.documentElement.clientHeight * scale + 'px';
+			
+		var startY = 0;
+		var elementY = 0;
+		inner.onmousedown = function(ev){
+			var ev = ev || window.event;
+			startY = ev.clientY;
+			elementY = inner.offsetTop;
+			document.setCapture && document.setCapture();
+			document.onmousemove = function(ev){
+				var ev = ev || window.event;
+				nowY = ev.clientY;
+				
+				var disY = nowY - startY;
+				var top = disY + elementY;
+				//范围限定 
+				
+				if(top<0){
+					top = 0;
+				}else if(top > document.documentElement.clientHeight - inner.offsetHeight){
+					top = document.documentElement.clientHeight - inner.offsetHeight;
+				}
+				
+				inner.style.top = top + 'px';
+				
+				//内容区
+				
+				var scale = top / (document.documentElement.clientHeight - inner.offsetHeight);
+				content.style.top = - (content.offsetHeight - document.documentElement.clientHeight) * scale + 'px';
+			    }
+			    
+			    
+			document.onmouseup = function(){
+				document.onmouseup = document.onmousemove = null;
+				document.releaseCapture && document.releaseCapture();
+			}
+			
+			return false;
+		}
+	</script>
+</html>
