@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width"/>
+		<title></title>
+		<!--
+			为什么要适配？
+			  等比效果
+			  实质：一个css像素在不同设备上包含的物理像素不同，实现等比
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			/*html{
+				font-size: 20px;
+			}*/
+			#test{
+				/*
+				 rem 是基于HTML的font-sizede大小计算
+				 * */
+				width: 1rem;
+				height: 1rem;
+				background: brown;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		/*var width = document.documentElement.clientWidth;
+		var html = document.querySelector('html');
+		html.style.fontSize = width+'px';*/
+		
+		var width = document.documentElement.clientWidth;
+		var styleNode = document.createElement('style');
+		styleNode.innerHTML = 'html{font-size: '+width+'px!important;}';
+		document.head.appendChild(styleNode);
+	</script>
+</html>

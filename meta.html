@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			html, body{
+				height: 100%;
+				overflow: hidden;
+			}
+			
+			#test{
+				width: 375px;
+				height: 300px;
+				background: brown;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="test">
+			
+		</div>
+	</body>
+	
+	<!--
+		chrome浏览器在解析时，会出现不同的解析方式，为了
+		以防万一，所以这需要写上
+	-->
+	<script type="text/javascript">
+		document.addEventListener('touchstart',function(ev){
+			ev.preventDefault();
+		})
+	</script>
+</html>

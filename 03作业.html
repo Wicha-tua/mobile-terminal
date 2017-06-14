@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			inner部分需要有弹窗
+			其他部分都不需要弹窗
+		-->
+		<div id="wrap">
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			wrapwrapwrapwrapwrapwrapwrapwrapwrapwrap
+			<div id="inner">
+				innerinnerinnerinnerinnerinnerinnerinner
+				innerinnerinnerinnerinnerinnerinnerinner
+				innerinnerinnerinnerinnerinnerinnerinner
+				innerinnerinnerinnerinnerinnerinnerinner
+				innerinnerinnerinnerinnerinnerinnerinner
+				innerinnerinnerinnerinnerinnerinnerinner
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var wrap = document.getElementById('wrap');
+		var inner = document.getElementById('inner');
+		document.addEventListener('touchstart', function(ev){
+			ev.preventDefault();
+		})
+		inner.addEventListener('touchstart', function(ev){
+			ev.stopPropagation();
+		})
+	</script>
+</html>

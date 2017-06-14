@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width"/>
+		<title></title>
+		<style type="text/css">
+		
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#test{
+				
+			}
+			/*
+			 取消滚动条的默认样式
+			 html，body{
+				height: 100%;
+				overflow: hidden;
+			}
+			 * */
+			html{
+				height: 100%;
+				overflow: hidden;
+			}
+			
+			body{
+				height: 100%;
+				overflow: hidden;
+			}
+			
+			/*chrom取消了对禁止系统的默认行为的执行
+			  如果要恢复，就加  *｛touch-action :none;｝
+			 * */
+			*｛
+				touch-action :none;
+			｝
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			test
+		</div>
+	</body>
+	<script type="text/javascript">
+	   
+	   //禁止系统的默认行为
+		document.addEventListener('touchstart', function(ev){
+			ev.preventDefault();
+		})
+		var test = document.getElementById('test');
+		
+		
+		
+		//造文本
+		var text = '';
+		for(var i = 0; i < 300; i++){
+			text += (i+1) + '<br>';
+			
+		}
+		
+		test.innerHTML = text;
+	</script>
+</html>
